@@ -6,7 +6,6 @@ function App() {
   const [output, setOutput] = useState("");
   const [message, setMessage] = useState("");
   const [darkMode, setDarkMode] = useState(true);
-  const [language, setLanguage] = useState("javascript");
 
   const handleRun = () => {
     setOutput("Mock Output: Code is running...");
@@ -18,10 +17,6 @@ function App() {
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
-  };
-
-  const handleLanguageChange = (event) => {
-    setLanguage(event.target.value);
   };
 
   return (
@@ -46,7 +41,6 @@ function App() {
         </button>
         <div className="h-[280px] md:h-[400px]">
           <Editor
-            // height="40vh md:60vh"
             language={language}
             defaultValue="// Write your code here"
             onChange={(value) => setCode(value)}
